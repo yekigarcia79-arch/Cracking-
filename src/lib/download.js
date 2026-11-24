@@ -1,8 +1,9 @@
 // Downloads a same-origin file while reporting how much has arrived.
 //
-// The response must be same-origin: GitHub's release host sends no CORS
-// headers, so a direct cross-origin fetch would fail before the first byte.
-// /download/sagacious.exe is proxied by download-endpoint.mjs for that reason.
+// The response must be same-origin. The binary ships in public/, so this works
+// on any static host and the browser can read Content-Length for real progress;
+// GitHub's asset host sends no CORS headers, which is why the release URL is
+// only used as a fallback link rather than fetched directly.
 
 export async function downloadWithProgress(url, { onProgress, signal } = {}) {
   const response = await fetch(url, { signal, cache: 'no-store' });

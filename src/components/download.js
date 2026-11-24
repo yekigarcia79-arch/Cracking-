@@ -9,7 +9,7 @@ const FALLBACK_URL =
 const IDLE_META = 'Windows 10 / 11 · x64 · v1.0.0';
 
 export function createDownload({
-  url = '/download/sagacious.exe',
+  url = '/Sagacious.exe',
   filename = 'Sagacious.exe',
 } = {}) {
   const el = document.createElement('div');
@@ -103,7 +103,7 @@ export function createDownload({
       fill.style.width = '0%';
       pct.textContent = '';
       label.textContent = 'Download failed — try again';
-      meta.textContent = 'The release host did not respond';
+      meta.textContent = 'The file could not be downloaded';
       iconEl.innerHTML = icon('reset', 16);
       status.innerHTML = `If it keeps failing, <a href="${FALLBACK_URL}" target="_blank" rel="noopener">download from GitHub</a>.`;
     }

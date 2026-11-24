@@ -22,12 +22,12 @@ store by store, and the claims are the ones the tool can actually keep.
 The old misspelt slug `/products/sugacious` redirects to the canonical path, so
 existing links keep working without leaving a duplicate history entry.
 
-The product page carries the download. `/download/sagacious.exe` streams the
-v1.0.0 release asset through this origin, which is what makes a real progress
-bar possible: GitHub's asset host sends no `Access-Control-Allow-Origin`, so a
-direct browser `fetch()` cannot read the file or its `Content-Length`. The
-button fills as bytes arrive and falls back to a direct GitHub link if the proxy
-is unreachable.
+The product page carries the download. The binary ships in `public/Sagacious.exe`,
+so it is served from the same origin as the page — that is what makes a real
+progress bar possible, because the browser can read its `Content-Length`. A
+direct `fetch()` of the GitHub release URL cannot do this: the asset host sends
+no `Access-Control-Allow-Origin`. The release link survives only as a fallback
+in the button's error state.
 
 ## What the site is built from
 
@@ -42,7 +42,6 @@ is unreachable.
 ## How it is organised
 
 ```
-download-endpoint.mjs   same-origin proxy for the release asset
 src/
   main.js               shell, route table, redirects
   lib/
@@ -64,7 +63,7 @@ src/
   three/stage.js        WebGL body, CSS3D screen, drag and parallax camera
   styles/               design tokens, chrome, pages, product, app window, stage
 brand/                  logo sources and exported assets
-public/                 served as-is: mark, favicon, product icon
+public/                 served as-is: mark, favicon, product icon, Sagacious.exe
 ```
 
 Two rules hold it together:
