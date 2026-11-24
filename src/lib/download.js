@@ -8,6 +8,11 @@ export async function downloadWithProgress(url, { onProgress, signal } = {}) {
   const response = await fetch(url, { signal, cache: 'no-store' });
   if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
+  // A static host with an SPA fallback answers a missing asset with index.html
+  // and a 200. Saving that as "Sagacious.exe" would be worse than failing.
+  const type = response.headers.get('content-type') || '';
+  if (type.includes('text/html')) throw new Error('asset-missing');
+
   const total = Number(response.headers.get('content-length')) || 0;
 
   if (!response.body) {

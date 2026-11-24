@@ -1,0 +1,5 @@
+# Cloudflare Pages: this site is a single-page app, so every route has to fall
+# back to the shell. Without this, a refresh on /about or /products/sagacious
+# returns a 404 instead of the app.
+/*
+  /index.html  200
