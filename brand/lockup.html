@@ -1,0 +1,55 @@
+<!doctype html>
+<!-- Source for brand/cracking-lockup.png. Render with:
+     brave --headless --hide-scrollbars --window-size=1280,400 \
+       --screenshot="brand/cracking-lockup.png" \
+       http://localhost:5173/brand/lockup.html -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @font-face {
+        font-family: 'Geist Variable';
+        src: url('/node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2') format('woff2-variations');
+        font-weight: 100 900;
+        font-display: block;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #08090a;
+      }
+
+      .lockup {
+        display: flex;
+        align-items: center;
+        gap: 34px;
+        width: 1280px;
+        height: 400px;
+        padding: 0 80px;
+        box-sizing: border-box;
+      }
+      .lockup__mark {
+        display: block;
+        flex: 0 0 auto;
+        width: 176px;
+        height: 176px;
+      }
+.lockup__word {
+        font-family: 'Geist Variable', system-ui, sans-serif;
+        font-size: 118px;
+        font-weight: 560;
+        letter-spacing: -0.045em;
+        color: #f2f4f7;
+        line-height: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="lockup">
+      <img class="lockup__mark" src="/brand/cracking-mark.png" alt="" />
+      <span class="lockup__word">Cracking</span>
+    </div>
+  </body>
+</html>

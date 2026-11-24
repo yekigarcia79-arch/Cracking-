@@ -1,0 +1,20 @@
+{
+  "name": "cracking-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "node server.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/geist": "^5.3.0",
+    "@fontsource-variable/geist-mono": "^5.3.0",
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "vite": "^7.1.0"
+  }
+}

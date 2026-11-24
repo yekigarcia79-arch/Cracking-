@@ -1,0 +1,275 @@
+/* --------------------------------------------------------------------------
+   Interactive stage: WebGL frame + CSS3D interface + chrome
+   -------------------------------------------------------------------------- */
+.stage {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.stage.is-grabbing {
+  cursor: grabbing;
+}
+
+.stage::before {
+  content: '';
+  position: absolute;
+  inset: -6% -4%;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(52% 48% at 50% 46%, rgba(116, 145, 180, 0.17), rgba(80, 100, 130, 0.05) 48%, transparent 72%);
+  filter: blur(6px);
+}
+
+.stage__grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.032) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.032) 1px, transparent 1px);
+  background-size: 76px 76px;
+  background-position: center center;
+  -webkit-mask-image: radial-gradient(62% 58% at 50% 48%, #000 8%, transparent 76%);
+  mask-image: radial-gradient(62% 58% at 50% 48%, #000 8%, transparent 76%);
+  opacity: 0.85;
+}
+
+.stage__canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  outline: none;
+}
+
+.stage__css {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.stage__css-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.stage__screen {
+  pointer-events: auto;
+  cursor: default;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.9);
+}
+
+.stage__screen * {
+  cursor: default;
+}
+
+.stage__screen button,
+.stage__screen label,
+.stage__screen input {
+  cursor: pointer;
+}
+
+.stage__screen input {
+  cursor: text;
+}
+
+/* Chrome ------------------------------------------------------------------ */
+.stage-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 2px 14px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-4);
+}
+
+.stage-meta__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stage-meta__label i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(123, 167, 255, 0.1), 0 0 10px rgba(123, 167, 255, 0.6);
+}
+
+.stage-meta__hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-4);
+}
+
+.stage__note {
+  position: absolute;
+  bottom: 14px;
+  left: 16px;
+  z-index: 4;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-4);
+}
+
+.stage__reset {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 32px;
+  padding: 0 13px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-2);
+  background: rgba(14, 16, 18, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(5px);
+  pointer-events: none;
+  transition: opacity 0.28s var(--ease), transform 0.28s var(--ease), visibility 0.28s, color 0.2s ease, border-color 0.2s ease;
+}
+
+.stage__reset:hover {
+  color: var(--text);
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+.stage__reset.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  pointer-events: auto;
+}
+
+/* Loader ------------------------------------------------------------------ */
+.stage__loader {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: radial-gradient(45% 45% at 50% 50%, rgba(10, 11, 13, 0.9), rgba(8, 9, 10, 0.55) 60%, transparent 80%);
+  transition: opacity 0.45s ease;
+}
+
+.stage__loader[hidden] {
+  display: none;
+}
+
+.stage.is-ready .stage__loader {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.stage__loader-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.stage__loader-track {
+  display: block;
+  width: 150px;
+  height: 2px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+}
+
+.stage__loader-track i {
+  display: block;
+  width: 46%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  animation: stage-sweep 1.3s var(--ease) infinite;
+}
+
+@keyframes stage-sweep {
+  0% {
+    transform: translateX(-110%);
+  }
+  100% {
+    transform: translateX(230%);
+  }
+}
+
+/* Fallback ---------------------------------------------------------------- */
+.stage--fallback {
+  cursor: default;
+  display: grid;
+  place-items: center;
+  padding: 28px 16px;
+}
+
+.stage--fallback::before {
+  background: radial-gradient(50% 50% at 50% 50%, rgba(110, 135, 170, 0.12), transparent 72%);
+}
+
+.stage--fallback .stage__reset {
+  display: none;
+}
+
+.stage__fallback {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #0a0b0c;
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.09);
+}
+
+.stage__fallback-inner {
+  width: 1120px;
+  height: 800px;
+  transform-origin: top left;
+}
+
+@media (max-width: 720px) {
+  .stage-meta__hint span {
+    display: none;
+  }
+  .stage__reset {
+    right: 14px;
+    bottom: 14px;
+    height: 30px;
+    font-size: 9.5px;
+  }
+}

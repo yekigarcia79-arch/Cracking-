@@ -1,0 +1,29 @@
+<!doctype html>
+<!-- Preview only: proves the mark has no white ground. Render with:
+     brave --headless --hide-scrollbars --window-size=640,640 \
+       --screenshot="brand/cracking-mark-preview-dark.png" \
+       http://localhost:5173/brand/preview-dark.html -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #08090a;
+        display: grid;
+        place-items: center;
+        height: 640px;
+      }
+      img {
+        display: block;
+        width: 520px;
+        height: 520px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="/brand/cracking-mark.png" alt="" />
+  </body>
+</html>
