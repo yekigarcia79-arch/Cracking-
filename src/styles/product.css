@@ -124,6 +124,128 @@
   gap: 22px;
 }
 
+/* Download control ------------------------------------------------------- */
+.product-hero__download {
+  margin-top: 28px;
+}
+
+.dl {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: min(100%, 360px);
+}
+
+.dl__btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 13px 18px;
+  font-family: var(--font-sans);
+  color: #0a0b0c;
+  background: linear-gradient(180deg, #fbfcfd, #e4e7ea);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 10px 30px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color 0.2s var(--ease), transform 0.16s var(--ease), background 0.2s var(--ease);
+}
+
+.dl__btn:hover {
+  border-color: #fff;
+}
+
+.dl__btn:active {
+  transform: translateY(1px);
+}
+
+.dl__btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.dl[data-state='busy'] .dl__btn {
+  cursor: progress;
+}
+
+/* The fill grows from the left as bytes arrive; it sits behind the content. */
+.dl__fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 0;
+  background: linear-gradient(180deg, #cfe2ff, #a6c6ff);
+  transition: width 0.18s linear;
+  pointer-events: none;
+}
+
+.dl__body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+}
+
+.dl__icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(10, 11, 12, 0.07);
+}
+
+.dl__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dl__label {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+.dl__meta {
+  font-size: 11px;
+  color: rgba(10, 11, 12, 0.6);
+}
+
+.dl__pct {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: rgba(10, 11, 12, 0.7);
+}
+
+.dl[data-state='error'] .dl__btn {
+  color: #4a0d0d;
+  background: linear-gradient(180deg, #ffe3e3, #ffc9c9);
+}
+
+.dl[data-state='error'] .dl__meta {
+  color: rgba(74, 13, 13, 0.72);
+}
+
+.dl__status {
+  margin: 0;
+  min-height: 1em;
+  font-size: 11.5px;
+  color: var(--text-4);
+}
+
+.dl__status a {
+  color: var(--text-2);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* Product icon: the rendered keycap framed in a tile. Shared by the product
    hero and the catalogue card. */
 .product-icon {

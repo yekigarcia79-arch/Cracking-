@@ -1,0 +1,5 @@
+node_modules/
+.cache/
+shots/
+_cdp-profile/
+.DS_Store

@@ -3,6 +3,7 @@
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { extname, join, normalize, resolve } from 'node:path';
+import { handleDownload } from './download-endpoint.mjs';
 
 const root = resolve(process.cwd(), 'dist');
 const port = Number(process.env.PORT || 4173);
@@ -32,6 +33,13 @@ async function send(file, res) {
 
 createServer(async (req, res) => {
   const url = decodeURIComponent((req.url || '/').split('?')[0]);
+
+  // Same-origin release download, so the browser can report progress.
+  if (url === '/download/sagacious.exe') {
+    await handleDownload(req, res);
+    return;
+  }
+
   const candidate = normalize(join(root, url));
   try {
     if (!candidate.startsWith(root)) throw new Error('outside root');

@@ -1,6 +1,7 @@
 import { artifacts, cli, cliFlags, specs } from '../data/sagacious.js';
 import { icon } from '../lib/icons.js';
 import { productIcon } from '../components/logo.js';
+import { createDownload } from '../components/download.js';
 import { initReveals, copyText } from '../lib/motion.js';
 import { mountWindow } from '../components/window-frame.js';
 
@@ -74,6 +75,7 @@ function page() {
             <div><dt>Interface</dt><dd>GUI + CLI</dd></div>
           </dl>
         </div>
+        <div class="product-hero__download" data-download data-reveal style="--reveal-delay: 200ms"></div>
       </div>
       <div class="container">
         <div class="stage-meta stage-meta--product">
@@ -371,6 +373,7 @@ function page() {
 
   let stage;
   let view;
+  let download;
   let disposed = false;
   let reveals = () => {};
   let tabCleanup = () => {};
@@ -385,6 +388,8 @@ function page() {
     mount() {
       reveals = initReveals(el);
       view = mountWindow(el.querySelector('#anatomy-window'), { interactive: true, minWidth: 660 });
+      download = createDownload();
+      el.querySelector('[data-download]').append(download.el);
       import('../three/stage.js').then(({ createStage }) => {
         if (disposed) return;
         stage = createStage(el.querySelector('#product-stage'), { variant: 'product' });
@@ -463,8 +468,10 @@ function page() {
       tabCleanup();
       stage?.destroy();
       view?.destroy();
+      download?.destroy();
       stage = null;
       view = null;
+      download = null;
     },
   };
 }

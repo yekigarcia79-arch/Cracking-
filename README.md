@@ -22,6 +22,13 @@ store by store, and the claims are the ones the tool can actually keep.
 The old misspelt slug `/products/sugacious` redirects to the canonical path, so
 existing links keep working without leaving a duplicate history entry.
 
+The product page carries the download. `/download/sagacious.exe` streams the
+v1.0.0 release asset through this origin, which is what makes a real progress
+bar possible: GitHub's asset host sends no `Access-Control-Allow-Origin`, so a
+direct browser `fetch()` cannot read the file or its `Content-Length`. The
+button fills as bytes arrive and falls back to a direct GitHub link if the proxy
+is unreachable.
+
 ## What the site is built from
 
 | Layer | Choice |
@@ -35,6 +42,7 @@ existing links keep working without leaving a duplicate history entry.
 ## How it is organised
 
 ```
+download-endpoint.mjs   same-origin proxy for the release asset
 src/
   main.js               shell, route table, redirects
   lib/
@@ -42,10 +50,12 @@ src/
     dom.js              element and event helpers
     icons.js            inline 24px stroke icons
     motion.js           reveal and parallax observers, clipboard helper
+    download.js         streaming fetch with progress, blob save
   pages/                one module per page (render + mount/unmount)
   components/
     chrome.js           header, mobile menu, footer
     logo.js             the Cracking mark and the product icon
+    download.js         download button and its progress states
     app-window.js       the 560x400 interface, reconstructed at 2x
     window-frame.js     physical frame plus ResizeObserver scaling
   data/

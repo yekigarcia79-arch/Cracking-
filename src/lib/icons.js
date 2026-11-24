@@ -2,6 +2,7 @@ const paths = {
   mark: `<rect x="2.75" y="2.75" width="18.5" height="18.5" rx="5" stroke="currentColor" stroke-width="1.4"/>
     <path d="M7.5 8.75h9M7.5 12h6.25M7.5 15.25h3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>`,
   arrowRight: `<path d="M4.5 12h14M13 6.5l5.5 5.5-5.5 5.5"/>`,
+  arrowDown: `<path d="M12 4.5v11M7.5 11l4.5 4.5 4.5-4.5M4.5 19.5h15"/>`,
   arrowUpRight: `<path d="M7 17 17 7M8.5 7H17v8.5"/>`,
   reset: `<path d="M4.5 9.5A8 8 0 1 1 4 14"/><path d="M4.2 4.6v5h5"/>`,
   copy: `<rect x="9" y="9" width="10.5" height="10.5" rx="2.2"/><path d="M15 6.2A2.2 2.2 0 0 0 12.8 4H6.2A2.2 2.2 0 0 0 4 6.2v6.6A2.2 2.2 0 0 0 6.2 15"/>`,
