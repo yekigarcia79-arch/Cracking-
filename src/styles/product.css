@@ -246,18 +246,16 @@
   text-underline-offset: 2px;
 }
 
-/* Product icon: the rendered keycap framed in a tile. Shared by the product
+/* Product icon: the rendered keycap, full-bleed. Shared by the product
    hero and the catalogue card. */
 .product-icon {
   display: grid;
   place-items: center;
+  overflow: hidden;
   flex: 0 0 auto;
   width: var(--icon-size, 72px);
   height: var(--icon-size, 72px);
-  border-radius: calc(var(--icon-size, 72px) * 0.24);
-  background: linear-gradient(180deg, #f7f8fa, #e2e5ea);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  border-radius: 14px;
 }
 
 .product-icon--lg {
@@ -270,11 +268,9 @@
 
 .product-icon img {
   display: block;
-  /* The source render is 62% keycap inside a transparent 500px canvas, so the
-     image box is scaled past the tile to make the keycap read at icon sizes. */
-  width: calc(var(--icon-size, 72px) * 1.08);
-  height: calc(var(--icon-size, 72px) * 1.08);
-  object-fit: contain;
+  width: 138%;
+  height: 138%;
+  object-fit: cover;
 }
 
 .product-hero__tags {
