@@ -15,7 +15,7 @@ store by store, and the claims are the ones the tool can actually keep.
 |---|---|
 | `/` | Landing — the premise, the fourteen artifact stores, four capabilities, the interface, the details that matter after the first delete |
 | `/products` | Catalogue. One product, listed only because it is finished, documented and supported |
-| `/products/sagacious` | The product in full — 3D window, interface anatomy by region, coverage table, behaviour, command line, specification |
+| `/products/sagacious` | The product in full — 3D window, interface anatomy by region, coverage table, behaviour, specification |
 | `/about` | The studio's principles, technical notes, and the things the product deliberately refuses to do |
 | anything else | A designed 404 that stays inside the record metaphor |
 

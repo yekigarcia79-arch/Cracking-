@@ -4,7 +4,7 @@ import { initReveals, initParallax } from '../lib/motion.js';
 import { mountWindow } from '../components/window-frame.js';
 
 const annotations = [
-  { index: '01', title: 'Header', body: 'Trace count, selection count, public-list matches, administrator state and the build number.' },
+  { index: '01', title: 'Header', body: 'Trace count, selection count, public-list matches and administrator state.' },
   { index: '02', title: 'Filter and SYS', body: 'Match a path, a file name or an artifact tag. SYS includes system traces; switch it off for software only.' },
   { index: '03', title: 'Trace rows', body: 'Every row names its store, its file and its path. Pre-selected rows are the ones the public list tracks.' },
   { index: '04', title: 'Actions', body: 'Wipe the selection, arm file removal, or reload the list. The status line reports what happened.' },
@@ -17,7 +17,7 @@ function page() {
     <section class="hero">
       <div class="container hero__inner">
         <div class="hero__copy">
-          <p class="eyebrow" data-reveal>Sagacious 1.0 · Windows x64</p>
+          <p class="eyebrow" data-reveal>Sagacious · Windows x64</p>
           <h1 class="display hero__title" data-reveal style="--reveal-delay: 60ms">
             Windows remembers.
             <span class="dim">You decide what stays.</span>
@@ -36,7 +36,6 @@ function page() {
           <dl class="hero__meta" data-reveal style="--reveal-delay: 270ms">
             <div><dt>Artifact sources</dt><dd>${artifacts.length}</dd></div>
             <div><dt>Change journal</dt><dd>USN</dd></div>
-            <div><dt>Current release</dt><dd>1.0.0</dd></div>
           </dl>
         </div>
         <div class="hero__stage" data-parallax="0.018">
@@ -147,7 +146,7 @@ function page() {
           <div class="interface__preview" data-reveal>
             <div class="interface__window" id="home-interface"></div>
             <div class="interface__caption">
-              <span class="mono">SAGACIOUS 1.0 · 560 × 400</span>
+              <span class="mono">SAGACIOUS · 560 × 400</span>
               <span class="mono interface__swipe">SWIPE TO INSPECT</span>
               <span class="mono">RENDERED AT 2×</span>
             </div>
@@ -229,8 +228,8 @@ function page() {
             <p>Windows 10 / 11 · x64</p>
           </div>
           <div class="cta__spec">
-            <span class="mono">RELEASE</span>
-            <p>1.0.0 · single executable</p>
+            <span class="mono">DISTRIBUTION</span>
+            <p>Single executable</p>
           </div>
           <div class="cta__spec">
             <span class="mono">ACCESS</span>

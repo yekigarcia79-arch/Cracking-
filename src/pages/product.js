@@ -1,8 +1,8 @@
-import { artifacts, cli, cliFlags, specs } from '../data/sagacious.js';
+import { artifacts, specs } from '../data/sagacious.js';
 import { icon } from '../lib/icons.js';
 import { productIcon } from '../components/logo.js';
 import { createDownload } from '../components/download.js';
-import { initReveals, copyText } from '../lib/motion.js';
+import { initReveals } from '../lib/motion.js';
 import { mountWindow } from '../components/window-frame.js';
 
 const regions = [
@@ -11,7 +11,7 @@ const regions = [
     index: '01',
     title: 'Header',
     body: 'The state of the list before anything runs: how many traces were found, how many are ticked, and how many match the public list.',
-    points: ['Trace, selection and match counts', 'ADMIN badge reflects elevation', 'Build number sits beside the wordmark'],
+    points: ['Trace, selection and match counts', 'ADMIN badge reflects elevation'],
   },
   {
     id: 'tools',
@@ -59,7 +59,6 @@ function page() {
           </div>
           <div class="product-hero__tags" data-reveal style="--reveal-delay: 90ms">
             <span class="pill"><i></i>Released</span>
-            <span class="chip mono">v1.0.0</span>
             <span class="chip mono">Windows x64</span>
           </div>
         </div>
@@ -72,7 +71,7 @@ function page() {
           <dl class="product-hero__meta" data-reveal style="--reveal-delay: 160ms">
             <div><dt>Artifact sources</dt><dd>${artifacts.length}</dd></div>
             <div><dt>Window</dt><dd>560 × 400</dd></div>
-            <div><dt>Interface</dt><dd>GUI + CLI</dd></div>
+            <div><dt>Interface</dt><dd>GUI</dd></div>
           </dl>
         </div>
         <div class="product-hero__download" data-download data-reveal style="--reveal-delay: 200ms"></div>
@@ -237,7 +236,6 @@ function page() {
               </p>
               <ul class="dive__list">
                 <li>The status line reports how many volumes were reset.</li>
-                <li><span class="mono">--no-usn</span> on the command line skips the rebuild.</li>
                 <li>The same pass removes the wipe’s own file-deleted records.</li>
               </ul>
             </div>
@@ -261,59 +259,6 @@ function page() {
               </div>
             </div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="cli">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-head__label"><p class="eyebrow">Command line</p></div>
-          <div class="section-head__body" data-reveal>
-            <h2 class="h2">The same engine, without the window.</h2>
-            <p class="lead">
-              <span class="mono">sagacious-cli.exe</span> ships in the same release. It prints counts and
-              exit codes instead of drawing them.
-            </p>
-          </div>
-        </div>
-
-        <div class="cli">
-          <div class="cli__panel" data-reveal>
-            <div class="cli__bar">
-              <span class="cli__dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="mono">sagacious-cli — powershell</span>
-              <button class="cli__copy" type="button" data-copy>
-                ${icon('copy', 14)}<span>Copy</span>
-              </button>
-            </div>
-            <div class="cli__body">
-              <p><span class="cli__prompt">PS&gt;</span> sagacious-cli list --sys belat</p>
-              <p class="cli__comment"># print matches outside \Windows\, change nothing</p>
-              <p><span class="cli__prompt">PS&gt;</span> sagacious-cli wipe --sys belat</p>
-              <p class="cli__comment"># delete the matches</p>
-              <p><span class="cli__prompt">PS&gt;</span> sagacious-cli kill --files --stealth belat</p>
-              <p class="cli__comment"># delete files, reset journals, clean own traces</p>
-              <p class="cli__cursor"><span class="cli__prompt">PS&gt;</span> <span class="cli__caret" aria-hidden="true"></span></p>
-            </div>
-          </div>
-          <div class="cli__side" data-reveal style="--reveal-delay: 90ms">
-            <div class="cli__commands">
-              ${cli
-                .map(
-                  (item) => `
-                <div class="cli__command">
-                  <code>${item.command} <em>${item.args}</em></code>
-                  <span>${item.note}</span>
-                </div>`
-                )
-                .join('')}
-            </div>
-            <div class="cli__flags">
-              <p class="mono">FLAGS</p>
-              ${cliFlags.map((item) => `<div><code>${item.flag}</code><span>${item.note}</span></div>`).join('')}
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -344,7 +289,7 @@ function page() {
             <h3>Administrator, by design.</h3>
             <p>
               Reading BAM, Amcache and the SYSTEM hive requires elevation, and so does rewriting
-              them. The GUI manifest requests it at launch; the CLI runs as the user who started it.
+              them. The manifest requests it at launch, so the stores can be read and rewritten.
             </p>
             <div class="specs__note mono">NO SERVICE · NO TRAY ICON · NO ACCOUNT</div>
           </aside>
@@ -355,16 +300,15 @@ function page() {
     <section class="section section--cta">
       <div class="container cta">
         <div class="cta__body" data-reveal>
-          <p class="eyebrow">Sagacious 1.0</p>
+          <p class="eyebrow">Sagacious</p>
           <h2 class="h2 cta__title">That is the whole product.</h2>
-          <p class="lead">One window, fourteen stores, a rebuilt journal and a command line for when the window is in the way.</p>
+          <p class="lead">One window, fourteen stores, a rebuilt journal.</p>
           <div class="btn-row">
             <a class="btn btn--primary" href="/products">All products ${icon('arrowRight', 16, 'icon--arrow')}</a>
             <a class="btn" href="/about">About the product</a>
           </div>
         </div>
         <div class="cta__aside" data-reveal style="--reveal-delay: 100ms">
-          <div class="cta__spec"><span class="mono">VERSION</span><p>1.0.0</p></div>
           <div class="cta__spec"><span class="mono">PLATFORM</span><p>Windows 10 / 11 · x64</p></div>
           <div class="cta__spec"><span class="mono">PRIVILEGES</span><p>Administrator</p></div>
         </div>
@@ -383,7 +327,7 @@ function page() {
     title: 'Sagacious',
     fullTitle: 'Sagacious — Trace hygiene for Windows',
     description:
-      'Sagacious by Cracking: fourteen artifact sources, selective removal, a rebuilt change journal and a real command line. Explore the interface in 3D.',
+      'Sagacious by Cracking: fourteen artifact sources, selective removal and a rebuilt change journal. Explore the interface in 3D.',
     render: () => el,
     mount() {
       reveals = initReveals(el);
@@ -447,17 +391,6 @@ function page() {
         el.querySelector('.anatomy__tabs')?.removeEventListener('click', onClick);
         el.querySelector('.anatomy__tabs')?.removeEventListener('keydown', onKey);
       };
-
-      const copyBtn = el.querySelector('[data-copy]');
-      const copyLabel = copyBtn.querySelector('span');
-      const onCopy = async () => {
-        const ok = await copyText('sagacious-cli wipe --sys belat');
-        copyLabel.textContent = ok ? 'Copied' : 'Copy failed';
-        window.setTimeout(() => {
-          copyLabel.textContent = 'Copy';
-        }, 1800);
-      };
-      copyBtn.addEventListener('click', onCopy);
 
       // Start on the list region: the rows are the most legible part of the window.
       select('header');

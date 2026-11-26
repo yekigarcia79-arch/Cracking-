@@ -62,33 +62,12 @@ export const highlights = [
     body: 'Names involved in a delete stay tracked. A background pass walks every fixed drive by exact name, resuming where it stopped, and removes anything that carries them — including folders an updater rewrites later.',
     meta: 'Idle backoff 1.5 s → 24 s',
   },
-  {
-    icon: 'terminal',
-    title: 'A real command line',
-    body: 'The same engine without the window: list, wipe and kill, with switches for software-only scans, journal resets, stealth cleanup and file removal. Exit codes and counts are printed, not implied.',
-    meta: 'sagacious-cli --version',
-  },
-];
-
-export const cli = [
-  { command: 'sagacious-cli list', args: '[query]', note: 'print matches, change nothing' },
-  { command: 'sagacious-cli wipe', args: '[query]', note: 'delete matches' },
-  { command: 'sagacious-cli kill', args: '[query]', note: 'delete matches, reset journals, clean own traces' },
-];
-
-export const cliFlags = [
-  { flag: '--sys', note: 'software only (hide \\Windows\\ paths)' },
-  { flag: '--no-usn', note: 'do not rebuild the change journal' },
-  { flag: '--stealth', note: 'also scrub this exe’s own traces' },
-  { flag: '--cheats', note: 'only rows listed on whatexpsare.online' },
-  { flag: '--files', note: 'also delete the files themselves' },
 ];
 
 export const specs = [
-  { key: 'Version', value: '1.0.0' },
   { key: 'Platform', value: 'Windows 10 / 11 · x64' },
   { key: 'Runtime', value: 'Win32 · DirectX 11' },
-  { key: 'Interface', value: 'GUI and command line' },
+  { key: 'Interface', value: 'GUI' },
   { key: 'Window', value: '560 × 400, fixed' },
   { key: 'Privileges', value: 'Administrator' },
   { key: 'Distribution', value: 'Single executable' },

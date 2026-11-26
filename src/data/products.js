@@ -6,14 +6,13 @@ export const products = [
     index: '01',
     name: 'Sagacious',
     category: 'Windows utility',
-    version: '1.0.0',
     status: 'Released',
     platform: 'Windows 10 / 11 · x64',
     tagline: 'Trace hygiene for Windows.',
     summary:
       'Finds the execution records that a Windows machine keeps, lets you choose which ones go, and rebuilds the change journal so the record stays consistent.',
     href: '/products/sagacious',
-    meta: ['Windows x64', 'v1.0.0', 'Local'],
+    meta: ['Windows x64', 'Local'],
   },
 ];
 

@@ -21,7 +21,6 @@ export function createHeader() {
         ${links.map((link) => `<a class="nav__link" href="${link.href}">${link.label}</a>`).join('')}
       </nav>
       <div class="nav__actions">
-        <span class="nav__version">v1.0.0</span>
         <a class="btn btn--primary btn--sm nav__cta" href="/products/sagacious">
           Explore product
           ${icon('arrowRight', 15, 'icon--arrow')}
@@ -38,7 +37,7 @@ export function createHeader() {
         </nav>
         <div class="mobile-menu__foot">
           <a class="btn btn--primary" href="/products/sagacious">Explore Sagacious ${icon('arrowRight', 16)}</a>
-          <p class="mono">Version 1.0.0 · Windows 10 / 11 · x64</p>
+          <p class="mono">Windows 10 / 11 · x64</p>
         </div>
       </div>
     </div>`;
@@ -153,7 +152,7 @@ export function createFooter() {
             <span class="brand__word">Cracking</span>
           </a>
           <p class="footer__tagline">Small, precise Windows software.<br />One executable, no account, nothing left behind.</p>
-          <span class="footer__status"><i></i>Sagacious 1.0.0 · released</span>
+          <span class="footer__status"><i></i>Sagacious · released</span>
         </div>
         <div class="footer__cols">
           <div class="footer__col">
@@ -166,7 +165,6 @@ export function createFooter() {
             <p class="footer__heading">Reference</p>
             <a href="/products/sagacious#coverage">Artifact coverage</a>
             <a href="/products/sagacious#capabilities">Capabilities</a>
-            <a href="/products/sagacious#cli">Command line</a>
             <a href="/products/sagacious#specs">Specifications</a>
           </div>
           <div class="footer__col">
@@ -180,7 +178,6 @@ export function createFooter() {
       <div class="footer__bottom">
         <p>© 2026 Cracking. Windows 10 / 11 · x64.</p>
         <div class="footer__meta">
-          <span class="mono">BUILD 1.0.0</span>
           <button class="footer__top-link" type="button" data-top>Back to top ${icon('arrowUpRight', 13)}</button>
         </div>
       </div>

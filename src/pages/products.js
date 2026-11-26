@@ -23,7 +23,6 @@ function page() {
           <dl class="page-head__meta" data-reveal style="--reveal-delay: 140ms">
             <div><dt>Products</dt><dd>${String(products.length).padStart(2, '0')}</dd></div>
             <div><dt>Platform</dt><dd>Windows</dd></div>
-            <div><dt>Latest</dt><dd>v1.0.0</dd></div>
           </dl>
         </div>
       </div>
@@ -86,7 +85,7 @@ function page() {
           <article data-reveal style="--reveal-delay: 70ms">
             <span class="platform-notes__index mono">02</span>
             <h3>One executable</h3>
-            <p>No installer framework, no runtime to bootstrap, no background service. The command-line front end is a second binary in the same release.</p>
+            <p>No installer framework, no runtime to bootstrap, no background service. One binary, Sagacious.exe.</p>
           </article>
           <article data-reveal style="--reveal-delay: 140ms">
             <span class="platform-notes__index mono">03</span>
@@ -102,7 +101,7 @@ function page() {
         <div class="cta__body" data-reveal>
           <p class="eyebrow">Next</p>
           <h2 class="h2 cta__title">See the whole product.</h2>
-          <p class="lead">The product page covers the interface, every artifact source, the command line and the specification sheet.</p>
+          <p class="lead">The product page covers the interface, every artifact source and the specification sheet.</p>
           <div class="btn-row">
             <a class="btn btn--primary" href="/products/sagacious">Open Sagacious ${icon('arrowRight', 16, 'icon--arrow')}</a>
           </div>
@@ -110,7 +109,6 @@ function page() {
         <div class="cta__aside" data-reveal style="--reveal-delay: 100ms">
           <div class="cta__spec"><span class="mono">PRODUCTS</span><p>01 — Sagacious</p></div>
           <div class="cta__spec"><span class="mono">PLATFORM</span><p>Windows 10 / 11 · x64</p></div>
-          <div class="cta__spec"><span class="mono">RELEASE</span><p>1.0.0</p></div>
         </div>
       </div>
     </section>`;

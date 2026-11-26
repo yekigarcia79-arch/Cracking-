@@ -6,7 +6,7 @@ import { downloadWithProgress, saveBlob, formatSize } from '../lib/download.js';
 const FALLBACK_URL =
   'https://github.com/yekigarcia79-arch/Cracking-/releases/download/v1.0.1/Sagacious.exe';
 
-const IDLE_META = 'Windows 10 / 11 · x64 · v1.0.1';
+const IDLE_META = 'Windows 10 / 11 · x64';
 
 export function createDownload({
   url = '/Sagacious.exe',

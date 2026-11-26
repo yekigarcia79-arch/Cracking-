@@ -6,8 +6,8 @@ const technical = [
   ['Runtime', 'Win32 · DirectX 11'],
   ['Interface layer', 'Dear ImGui 1.91.5, vendored'],
   ['Window', '560 × 400, fixed, borderless'],
-  ['Privileges', 'Administrator (GUI) · asInvoker (CLI)'],
-  ['Front ends', 'Sagacious.exe · sagacious-cli.exe'],
+  ['Privileges', 'Administrator'],
+  ['Front ends', 'Sagacious.exe'],
   ['Network', 'One optional request, cached for 24 hours'],
   ['Build', 'MSVC v143 · Windows 10 SDK · x64'],
 ];
@@ -36,9 +36,8 @@ function page() {
             what you choose, and then reconciles the journal underneath it.
           </p>
           <dl class="page-head__meta" data-reveal style="--reveal-delay: 140ms">
-            <div><dt>Release</dt><dd>1.0.0</dd></div>
             <div><dt>Platform</dt><dd>Windows</dd></div>
-            <div><dt>Interfaces</dt><dd>GUI + CLI</dd></div>
+            <div><dt>Interface</dt><dd>GUI</dd></div>
           </dl>
         </div>
       </div>
@@ -120,16 +119,15 @@ function page() {
     <section class="section section--cta">
       <div class="container cta">
         <div class="cta__body" data-reveal>
-          <p class="eyebrow">Sagacious 1.0</p>
+          <p class="eyebrow">Sagacious</p>
           <h2 class="h2 cta__title">Read the product page.</h2>
-          <p class="lead">Interface anatomy, all fourteen artifact sources, the command line and the full specification.</p>
+          <p class="lead">Interface anatomy, all fourteen artifact sources and the full specification.</p>
           <div class="btn-row">
             <a class="btn btn--primary" href="/products/sagacious">Open Sagacious ${icon('arrowRight', 16, 'icon--arrow')}</a>
             <a class="btn" href="/products">Products</a>
           </div>
         </div>
         <div class="cta__aside" data-reveal style="--reveal-delay: 100ms">
-          <div class="cta__spec"><span class="mono">RELEASE</span><p>1.0.0</p></div>
           <div class="cta__spec"><span class="mono">PLATFORM</span><p>Windows 10 / 11 · x64</p></div>
           <div class="cta__spec"><span class="mono">DISTRIBUTION</span><p>Single executable</p></div>
         </div>

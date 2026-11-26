@@ -14,7 +14,6 @@ const markup = `
   <div class="app__chrome">
     <span class="app__mark">${icon('mark', 18)}</span>
     <span class="app__name">Sagacious</span>
-    <span class="app__build">v1.0.0</span>
     <span class="app__controls" aria-hidden="true">
       <span class="app__control"><svg width="10" height="10" viewBox="0 0 10 10"><path d="M2 5h6" stroke="currentColor" stroke-width="1.2"/></svg></span>
       <span class="app__control"><svg width="10" height="10" viewBox="0 0 10 10"><rect x="2.4" y="2.4" width="5.2" height="5.2" fill="none" stroke="currentColor" stroke-width="1.1"/></svg></span>
