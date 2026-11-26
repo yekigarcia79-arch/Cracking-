@@ -4,7 +4,7 @@ import { downloadWithProgress, saveBlob, formatSize } from '../lib/download.js';
 // Direct release link, used only if the same-origin proxy is unreachable
 // (for example when the site is hosted as static files with no Node process).
 const FALLBACK_URL =
-  'https://github.com/yekigarcia79-arch/Cracking-/releases/download/v1.0.0/Sagacious.exe';
+  'https://github.com/yekigarcia79-arch/Cracking-/releases/download/v1.0.1/Sagacious.exe';
 
 const IDLE_META = 'Windows 10 / 11 · x64 · v1.0.0';
 
