@@ -17,7 +17,6 @@ function page() {
     <section class="hero">
       <div class="container hero__inner">
         <div class="hero__copy">
-          <p class="eyebrow" data-reveal>Sagacious · Windows x64</p>
           <h1 class="display hero__title" data-reveal style="--reveal-delay: 60ms">
             Windows remembers.
             <span class="dim">You decide what stays.</span>
@@ -47,7 +46,6 @@ function page() {
         </div>
       </div>
       <div class="container hero__foot">
-        <span class="mono">01 — OVERVIEW</span>
         <a class="hero__jump" href="#interface">Interface in detail ${icon('arrowRight', 13)}</a>
         <span class="hero__scroll">Scroll to inspect <i></i></span>
       </div>
@@ -56,9 +54,6 @@ function page() {
     <section class="section section--record" id="record">
       <div class="container">
         <div class="section-head">
-          <div class="section-head__label">
-            <p class="eyebrow">01 — The record</p>
-          </div>
           <div class="section-head__body" data-reveal>
             <h2 class="h2">A launch is never just a launch.</h2>
             <p class="lead">
@@ -106,9 +101,6 @@ function page() {
     <section class="section" id="capabilities">
       <div class="container">
         <div class="section-head">
-          <div class="section-head__label">
-            <p class="eyebrow">02 — Capabilities</p>
-          </div>
           <div class="section-head__body" data-reveal>
             <h2 class="h2">Four steps, no ceremony.</h2>
             <p class="lead">
@@ -145,14 +137,8 @@ function page() {
         <div class="interface">
           <div class="interface__preview" data-reveal>
             <div class="interface__window" id="home-interface"></div>
-            <div class="interface__caption">
-              <span class="mono">SAGACIOUS · 560 × 400</span>
-              <span class="mono interface__swipe">SWIPE TO INSPECT</span>
-              <span class="mono">RENDERED AT 2×</span>
-            </div>
           </div>
           <div class="interface__side">
-            <p class="eyebrow" data-reveal>03 — Interface</p>
             <h2 class="h2" data-reveal style="--reveal-delay: 50ms">Everything on one screen.</h2>
             <p class="lead" data-reveal style="--reveal-delay: 90ms">
               A fixed 560 × 400 window. The list is the product: every row names its store, its
@@ -183,9 +169,6 @@ function page() {
     <section class="section" id="details">
       <div class="container">
         <div class="section-head">
-          <div class="section-head__label">
-            <p class="eyebrow">04 — Detail</p>
-          </div>
           <div class="section-head__body" data-reveal>
             <h2 class="h2">The parts that matter after the first delete.</h2>
           </div>
@@ -209,7 +192,6 @@ function page() {
     <section class="section section--cta">
       <div class="container cta">
         <div class="cta__body" data-reveal>
-          <p class="eyebrow">05 — Product</p>
           <h2 class="h2 cta__title">Look at the interface,<br />not a screenshot.</h2>
           <p class="lead">
             Rotate the window, tick a row, run a wipe. The preview on the product page is the

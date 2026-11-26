@@ -11,7 +11,6 @@ function page() {
   el.innerHTML = `
     <section class="page-head">
       <div class="container">
-        <p class="eyebrow" data-reveal>Products</p>
         <h1 class="display page-head__title" data-reveal style="--reveal-delay: 50ms">
           One product.<br /><span class="dim">Built to be used.</span>
         </h1>
@@ -67,7 +66,6 @@ function page() {
     <section class="section">
       <div class="container">
         <div class="section-head">
-          <div class="section-head__label"><p class="eyebrow">Platform</p></div>
           <div class="section-head__body" data-reveal>
             <h2 class="h2">How the catalogue works.</h2>
             <p class="lead">
@@ -78,17 +76,14 @@ function page() {
         </div>
         <div class="platform-notes">
           <article data-reveal>
-            <span class="platform-notes__index mono">01</span>
             <h3>Local by default</h3>
             <p>No account, no telemetry pipeline, no cloud dependency. Sagacious makes one optional public-list request that can be skipped entirely.</p>
           </article>
           <article data-reveal style="--reveal-delay: 70ms">
-            <span class="platform-notes__index mono">02</span>
             <h3>One executable</h3>
             <p>No installer framework, no runtime to bootstrap, no background service. One binary, Sagacious.exe.</p>
           </article>
           <article data-reveal style="--reveal-delay: 140ms">
-            <span class="platform-notes__index mono">03</span>
             <h3>Documented in the UI</h3>
             <p>Counts, volume resets and skipped system files are reported where the action happens — not in a changelog nobody reads.</p>
           </article>
@@ -99,7 +94,6 @@ function page() {
     <section class="section section--cta">
       <div class="container cta">
         <div class="cta__body" data-reveal>
-          <p class="eyebrow">Next</p>
           <h2 class="h2 cta__title">See the whole product.</h2>
           <p class="lead">The product page covers the interface, every artifact source and the specification sheet.</p>
           <div class="btn-row">
@@ -107,7 +101,7 @@ function page() {
           </div>
         </div>
         <div class="cta__aside" data-reveal style="--reveal-delay: 100ms">
-          <div class="cta__spec"><span class="mono">PRODUCTS</span><p>01 — Sagacious</p></div>
+          <div class="cta__spec"><span class="mono">PRODUCT</span><p>Sagacious</p></div>
           <div class="cta__spec"><span class="mono">PLATFORM</span><p>Windows 10 / 11 · x64</p></div>
         </div>
       </div>

@@ -53,7 +53,6 @@ function page() {
           <div class="product-hero__id">
             ${productIcon('lg')}
             <div>
-              <p class="eyebrow" data-reveal>Cracking · Product 01 — Windows utility</p>
               <h1 class="display product-hero__name" data-reveal style="--reveal-delay: 50ms">Sagacious</h1>
             </div>
           </div>
@@ -82,17 +81,12 @@ function page() {
           <span class="stage-meta__hint">${icon('reset', 12)}<span>Drag to rotate</span></span>
         </div>
         <div class="product-stage" id="product-stage" aria-label="Interactive 3D presentation of the Sagacious window"></div>
-        <div class="product-stage__caption">
-          <span class="mono">INTERACTIVE · THREE.JS</span>
-          <span class="mono">DRAG TO ROTATE · TICK A ROW · RUN A WIPE</span>
-        </div>
       </div>
     </section>
 
     <section class="section section--interface" id="interface">
       <div class="container">
         <div class="section-head">
-          <div class="section-head__label"><p class="eyebrow">Interface</p></div>
           <div class="section-head__body" data-reveal>
             <h2 class="h2">The window, part by part.</h2>
             <p class="lead">
@@ -109,9 +103,7 @@ function page() {
           <div class="anatomy__window" data-reveal>
             <div class="anatomy__canvas" id="anatomy-window"></div>
             <div class="anatomy__caption">
-              <span class="mono">560 × 400 · RENDERED AT 2×</span>
-              <span class="mono anatomy__swipe">SWIPE TO INSPECT</span>
-              <span class="mono" data-anatomy-state>REGION 01 / 05</span>
+              <span class="mono" data-anatomy-state></span>
             </div>
           </div>
           <div class="anatomy__panel" data-reveal style="--reveal-delay: 90ms">
@@ -144,7 +136,6 @@ function page() {
     <section class="section" id="coverage">
       <div class="container">
         <div class="section-head">
-          <div class="section-head__label"><p class="eyebrow">Coverage</p></div>
           <div class="section-head__body" data-reveal>
             <h2 class="h2">Fourteen places a launch can hide.</h2>
             <p class="lead">
@@ -184,7 +175,6 @@ function page() {
     <section class="section" id="capabilities">
       <div class="container">
         <div class="section-head">
-          <div class="section-head__label"><p class="eyebrow">Behaviour</p></div>
           <div class="section-head__body" data-reveal>
             <h2 class="h2">Deletion is more than a row disappearing.</h2>
             <p class="lead">
@@ -197,7 +187,6 @@ function page() {
         <div class="dives">
           <article class="dive" data-reveal>
             <div class="dive__text">
-              <span class="dive__index mono">01</span>
               <h3 class="h3">Files, not just rows.</h3>
               <p>
                 Arm DELETE FILES and every delete also removes the software behind the ticked rows:
@@ -227,7 +216,6 @@ function page() {
 
           <article class="dive dive--reverse" data-reveal>
             <div class="dive__text">
-              <span class="dive__index mono">02</span>
               <h3 class="h3">The journal is rebuilt, not edited.</h3>
               <p>
                 Deleting a file writes a new record into the NTFS change journal. Wiping traces and
@@ -266,7 +254,6 @@ function page() {
     <section class="section" id="specs">
       <div class="container">
         <div class="section-head">
-          <div class="section-head__label"><p class="eyebrow">Specification</p></div>
           <div class="section-head__body" data-reveal>
             <h2 class="h2">The whole sheet.</h2>
             <p class="lead">Everything a release note would tell you, in one place.</p>
@@ -300,7 +287,6 @@ function page() {
     <section class="section section--cta">
       <div class="container cta">
         <div class="cta__body" data-reveal>
-          <p class="eyebrow">Sagacious</p>
           <h2 class="h2 cta__title">That is the whole product.</h2>
           <p class="lead">One window, fourteen stores, a rebuilt journal.</p>
           <div class="btn-row">

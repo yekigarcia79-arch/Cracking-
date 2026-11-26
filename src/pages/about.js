@@ -25,7 +25,6 @@ function page() {
   el.innerHTML = `
     <section class="page-head">
       <div class="container">
-        <p class="eyebrow" data-reveal>About Cracking</p>
         <h1 class="display page-head__title" data-reveal style="--reveal-delay: 50ms">
           Software that does<br /><span class="dim">one thing precisely.</span>
         </h1>
@@ -46,7 +45,6 @@ function page() {
     <section class="section" id="principles">
       <div class="container">
         <div class="section-head">
-          <div class="section-head__label"><p class="eyebrow">Principles</p></div>
           <div class="section-head__body" data-reveal>
             <h2 class="h2">Four rules the product is built around.</h2>
             <p class="lead">They are constraints, not values on a wall. Each one removes a feature that would have made the product easier to sell.</p>
@@ -70,7 +68,6 @@ function page() {
     <section class="section" id="technical">
       <div class="container">
         <div class="section-head">
-          <div class="section-head__label"><p class="eyebrow">Technical notes</p></div>
           <div class="section-head__body" data-reveal>
             <h2 class="h2">Small stack, stated plainly.</h2>
             <p class="lead">No Electron shell, no bundled browser, no runtime installer. The interface is drawn directly with DirectX 11.</p>
@@ -93,7 +90,6 @@ function page() {
     <section class="section" id="limits">
       <div class="container">
         <div class="section-head">
-          <div class="section-head__label"><p class="eyebrow">Limits</p></div>
           <div class="section-head__body" data-reveal>
             <h2 class="h2">What it deliberately does not do.</h2>
             <p class="lead">A tool is defined by its refusals as much as its features. These are the ones that keep Sagacious predictable.</p>
@@ -119,7 +115,6 @@ function page() {
     <section class="section section--cta">
       <div class="container cta">
         <div class="cta__body" data-reveal>
-          <p class="eyebrow">Sagacious</p>
           <h2 class="h2 cta__title">Read the product page.</h2>
           <p class="lead">Interface anatomy, all fourteen artifact sources and the full specification.</p>
           <div class="btn-row">

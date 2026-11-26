@@ -6,8 +6,7 @@ function page() {
   el.innerHTML = `
     <section class="notfound">
       <div class="container">
-        <p class="eyebrow">Error 404</p>
-        <p class="notfound__code">404</p>
+<p class="notfound__code">404</p>
         <h1 class="h2">This route is not in the record.</h1>
         <p class="lead">The page you asked for does not exist, or it has moved. The product and the catalogue are both one click away.</p>
         <div class="btn-row">
